@@ -1,3 +1,4 @@
+import prismaClient from '../../prisma'
 
 interface CriarUsuario{
     nome: string
@@ -7,8 +8,30 @@ interface CriarUsuario{
 
 class CriarUsuarioServices{
     async execute ({nome, email, senha}: CriarUsuario){
-        console.log(nome, email, senha)
-
+        if(!nome || !email || !senha){
+            throw new Error('Campos em Branco não são Permitidos')
+        }
+        const emailJaCadastrado = await prismaClient.user.findFirst({
+            where:{
+                email: email
+            }
+        })
+        if (emailJaCadastrado){
+            throw new Error('Esse Email já está Cadastrado')
+        }
+        const usuario = await prismaClient.user.create({
+            data: {
+                nome: nome,
+                email: email,
+                senha: senha 
+            },
+            select: {
+                id: true,
+                nome: true,
+                email: true
+            }
+        })
+        return {dados: usuario}
     }
 }
 
