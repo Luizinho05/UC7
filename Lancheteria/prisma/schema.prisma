@@ -20,3 +20,21 @@ model User{
 
   @@map("usuarios")
 }
+
+model Clientes{
+  id           String @id @default(uuid())
+  nome         String
+  cpf_cnpj     String
+  rg_ie        String
+  celular      String
+  celularFixo  String
+  rua          String
+  complemento  String
+  bairro       String
+  cidade       String
+  estado       String
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("clientes")
+}
