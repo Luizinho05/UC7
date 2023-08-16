@@ -38,3 +38,14 @@ model Clientes{
 
   @@map("clientes")
 }
+
+model Produtos{
+  id               String @id @default(uuid())
+  nome             String
+  meio_fabricacao  String
+  ingrediente      String
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("produtos")
+}
