@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { CriarUsuarioController } from './controllers/Usuarios/CriarUsuarioController'
 import { CriarClientesController } from './controllers/Clientes/CriarClientesController'
-import { ListarClientesController } from './controllers/ListaCliente/ListaClienteController'
+import { ListarClientesController } from './controllers/Clientes/ListaClienteController'
 
 const router = Router()
 
