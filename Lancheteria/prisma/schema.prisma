@@ -2,14 +2,19 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
+  //VEM DA DOCUMENTAÇÃO DO PRISMA
   provider = "prisma-client-js"
 }
 
 datasource db {
+  //VEM COMO MYSQL PORQUE BAIXAMOS
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
+// É UTILIZADO PARA O USUÁRIO, UTILIZANDO A PASTA CONTROLLER QUE TEM LIGAÇÃO COM O SERVICES
+// E TUDO ISSO É LIGADO AOU ROUTES, QUE É LIGADO AO SERVER
+// UTILIZANDO NO SERVICES O PRISMA CLIENT DENTRO DE SRC
 model User{
   id      String @id @default(uuid())
   nome    String 
@@ -18,9 +23,12 @@ model User{
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
-  @@map("usuarios")
+  @@map("usuarios")//NOME QUE DA ACESSO A TABELA USUARIO NO DB
 }
 
+// É UTILIZADO PARA O CLIENTES, UTILIZANDO A PASTA CONTROLLER QUE TEM LIGAÇÃO COM O SERVICES
+// E TUDO ISSO É LIGADO AO ROUTES, QUE É LIGADO AO SERVER
+// UTILIZANDO NO SERVICES O PRISMA CLIENT DENTRO DE SRC
 model Clientes{
   id           String @id @default(uuid())
   nome         String
@@ -36,9 +44,13 @@ model Clientes{
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
-  @@map("clientes")
+  @@map("clientes")// NOME QUE DA ACESSO A TABELA CLIENTES NO DB
 }
 
+
+// É UTILIZADO PARA O PRODUTOS, UTILIZANDO A PASTA CONTROLLER QUE TEM LIGAÇÃO COM O SERVICES
+// E TUDO ISSO É LIGADO AOU ROUTES, QUE É LIGADO AO SERVER
+// UTILIZANDO NO SERVICES O PRISMA CLIENT DENTRO DE SRC
 model Produtos{
   id               String @id @default(uuid())
   nome             String
@@ -47,5 +59,5 @@ model Produtos{
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
-  @@map("produtos")
+  @@map("produtos")// NOME QUE DA ACESSO A TABELA PRODUTOS NO DB
 }
