@@ -51,11 +51,13 @@ model Clientes{
 // É UTILIZADO PARA O PRODUTOS, UTILIZANDO A PASTA CONTROLLER QUE TEM LIGAÇÃO COM O SERVICES
 // E TUDO ISSO É LIGADO AOU ROUTES, QUE É LIGADO AO SERVER
 // UTILIZANDO NO SERVICES O PRISMA CLIENT DENTRO DE SRC
+
 model Produtos{
   id               String @id @default(uuid())
   nome             String
-  meio_fabricacao  String
-  ingrediente      String
+  fabricante       String
+  quantidade       String
+  preco            String
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 

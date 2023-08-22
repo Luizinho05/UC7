@@ -2,7 +2,7 @@ import  prismaClient  from '../../prisma'
 
 interface CriarCliente{
     nome:         string
-    cpf_cnpj :    string
+    cpf_cnpj:     string
     rg_ie:        string
     celular:      string
     celularFixo:  string
