@@ -1,0 +1,29 @@
+#formulariocadastroUsuario{
+  text-align: center;
+}
+
+.temasiniciaiscadastroUsuario{
+  color:black;
+  font-size:35px;
+}  
+
+.contatoUsuario{
+  color:black;
+  font-size:20px;
+}  
+
+
+.cadastrarUsuario{
+  color:#DAA520;
+  padding:15px;
+  cursor: pointer;
+}  
+
+.botaodecadastroUsuario{
+  background-color: black;
+  border-style:outset;
+  border-radius: 100px 100px 100px 100px;
+  bottom:100px;
+  border-color: #DAA520;
+  font-size:16px;
+}

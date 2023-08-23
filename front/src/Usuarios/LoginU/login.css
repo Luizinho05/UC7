@@ -1,0 +1,29 @@
+.formularioU{
+    text-align: center;
+  }
+  
+  #temasiniciaisU{
+    color:black;
+    font-size:35px;
+  }  
+  
+  .contatoU{
+    color:black;
+    font-size:20px;
+  }  
+  
+  
+  .loginU{
+    color:#DAA520;
+    padding:15px;
+    cursor: pointer;
+  }  
+  
+  .botaologinU{
+    background-color: black;
+    border-style:outset;
+    border-radius: 100px 100px 100px 100px;
+    bottom:100px;
+    border-color: #DAA520;
+    font-size:16px;
+  }

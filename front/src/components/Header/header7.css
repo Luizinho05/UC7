@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding:0;
+  }
+  
+  #fundo {
+    background: rgb(252, 173, 77);
+    padding: 5px;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .logo{
+    cursor: pointer;
+   }
+  
+   #banner {
+    width: 142px;
+    right: 142px;
+    float: left;
+  }
+  
+  .nomeLoja {
+    color: whitesmoke;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    margin: 60px;
+    border-color: whitesmoke;
+    text-shadow: 3px 0 black, -3px 0 black, 0 3px black, 0 -3px black,
+    2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
+    font-family:sans-serif;
+  }
+  
+  .pagina {
+    color: black;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    margin: 40px;
+    text-shadow: 3px 0 whitesmoke, -3px 0 whitesmoke, 0 3px whitesmoke, 0 -3px whitesmoke,
+  2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
+    border: none;
+    font-family:fantasy;
+    font-size:22px;
+  }
+  
+  .paginas {
+    color: black;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    margin: 40px;
+    text-shadow: 3px 0 whitesmoke, -3px 0 whitesmoke, 0 3px whitesmoke, 0 -3px whitesmoke,
+    2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
+    border: none;
+    font-family:fantasy;
+    font-size:22px;
+  }
+  
+  .dropdown {
+    position: static;
+    display: inline-block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background: rgba(0, 0, 0, 0.555);
+    font-style: oblique;
+    border-style: outset;
+    border-color:whitesmoke;
+    border-radius: 100px;
+  }
+  
+  .dropbtn {
+    background: transparent;
+    color: whitesmoke;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin: 18px;
+    border: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    border-style: outset;
+    border-color:black;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    border-style: outset;
+  }
+  
+  .dropdown-content a:hover {
+    background-color:black;
+    color:whitesmoke;
+  }
+  
+  .Link {
+    text-align: center;
+  }
