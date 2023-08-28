@@ -4,11 +4,13 @@ import { CriarClientesController } from './controllers/Clientes/CriarClientesCon
 import { CriarProdutosController } from './controllers/Produtos/CriarProdutosController'
 import { ListarClientesController } from './controllers/Clientes/ListaClienteController'
 import { ListarProdutosController } from './controllers/Produtos/ListarProdutoController'
+import { ListarUsuariosController } from './controllers/Usuarios/ListarUsuarioController'
 
 const router = Router()
 
 //Usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle)
+router.get('/ListarUsuarios', new ListarUsuariosController().handle)
 
 //Clientes
 router.post('/CriarClientes', new CriarClientesController().handle)

@@ -2,12 +2,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Home from './home/Inicio'
+import Home from './Inicio/index'
 import LoginU from './Usuarios/LoginU'
 import CadastroU from './Usuarios/CadastroU'
 import ProdutosCadastro from './Produtos/CadastroP'
 import ClienteCadastro from './Clientes/CadastroC'
-
+import ListarClientes from './dashboard/listacliente'
+import ListarProdutos from './dashboard/listaproduto'
+import ListarUsuarios from './dashboard/listausuario'
 
 export default function Rotas(){
     return(
@@ -19,6 +21,9 @@ export default function Rotas(){
             <Route path='/CadastroU' element={ <CadastroU /> } />
             <Route path='/CadastroP' element={ <ProdutosCadastro /> } />
             <Route path='/CadastroC' element={ <ClienteCadastro /> } />
+            <Route path='/listacliente' element={ <ListarClientes /> } />
+            <Route path='/listaproduto' element={ <ListarProdutos /> } />
+            <Route path='/listausuario' element={ <ListarUsuarios /> } />
         </Routes>
         <Footer />
         </BrowserRouter>

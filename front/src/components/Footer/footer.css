@@ -2,27 +2,26 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 40px;
-    background: rgb(252, 173, 77);
-    padding: 1;
+    height: 71px;
+    background: rgb(238, 171, 47);
+    padding: 2;
 }
 
-.lancheteria {
-    text-align: center;
-    color: black;
-    font-style: oblique;
-    position: relative;
-    border: none;
-    border-color: whitesmoke;
-    text-shadow: 3px 0 whitesmoke, -3px 0 whitesmoke, 0 3px whitesmoke, 0 -3px whitesmoke,
-    2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
-    font-family:fantasy;
-    font-size: 35px;
+.footer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 0px;
+    justify-content: space-between;
 }
+
+#banner {
+    width: 90px;
+    right: 90px;
+  }
+
+  .logo{
+    cursor: pointer;
+   }
+
 
 #element::-webkit-scrollbar {
     display: none;

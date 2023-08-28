@@ -30,7 +30,7 @@ model User{
 // E TUDO ISSO É LIGADO AO ROUTES, QUE É LIGADO AO SERVER
 // UTILIZANDO NO SERVICES O PRISMA CLIENT DENTRO DE SRC
 model Clientes{
-  id           String @id @default(uuid())
+  id           Int @id @default(autoincrement())
   nome         String
   cpf_cnpj     String
   rg_ie        String

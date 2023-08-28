@@ -1,0 +1,24 @@
+.TituloPagina {
+    color: black;
+    text-align: center;
+    margin: 20px;
+    border: none;
+  }
+
+  .Info{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    margin-right:39rem;
+    margin-left: 39rem;
+  }
+
+  .linhaDivision{
+    font-size: 24px;
+  }
+
+  .icones{
+    cursor: pointer;
+    margin: 1px;
+  }

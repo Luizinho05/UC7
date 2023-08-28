@@ -1,0 +1,24 @@
+.titlePagina {
+    color: black;
+    text-align: center;
+    margin: 20px;
+    border: none;
+  }
+
+  .dados{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    margin-right:39rem;
+    margin-left: 39rem;
+  }
+
+  .linhadivisora{
+    font-size: 24px;
+  }
+
+  .icons{
+    margin: 1px;
+    cursor: pointer;
+  }

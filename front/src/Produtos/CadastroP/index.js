@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './produtos.css'
 
 export default function ProdutosCadastro() {
@@ -12,7 +12,9 @@ function handleCadastrar(event){
     event.preventDefault()
     if ( !nome || !fabricante || !quantidade || !preco ){
      alert('Existe Campos em Branco')
-    }     
+     return
+    }   
+    alert (`Nome: ${nome} \nFabricante: ${fabricante} \nQuantidade: ${quantidade} \nPreço: ${preco}`)  
 }
 
         return (
@@ -20,30 +22,35 @@ function handleCadastrar(event){
                 <h1 className="temasinicialProduto">Cadastro de Produtos</h1>
 
                 <form onSubmit={handleCadastrar}><br/>
+                    
+                    <div>
                     <label className="contatoProduto"><strong>Nome:</strong></label>
-                    <input
+                    <input id='espaçoC'
                    type='text'
                    value={nome}
                    onChange={(e) => setNome(e.target.value)}
-                   /><br/><br/>
+                   /><br/>
                     <label className='contatoProduto'><strong>Fabricante:</strong></label>
-                    <input
+                    <input id='espaçoC'
                     type='text'
                     value={fabricante}
                     onChange={(e) => setFabricante(e.target.value)}
-                    /><br/><br/>
+                    /><br/>
+                    </div>
+                    <div>
                     <label className='contatoProduto'><strong>Quantidade:</strong></label>
-                    <input
+                    <input id='espaçoC'
                     type='text'
                     value={quantidade}
                     onChange={(e) => setQuantidade(e.target.value)}
-                    /><br/><br/>
+                    /><br/>
                     <label className='contatoProduto'><strong>Preço:</strong></label>
-                    <input
+                    <input id='espaçoC'
                     type='text'
                     value={preco}
                     onChange={(e) => setPreco(e.target.value)}
-                    /><br/><br/>
+                    /></div>
+                    <br/><br/>
 
                     <button type='submit' className='botaoProduto'><strong className="cadastrarProduto">Cadastrar</strong></button>
 

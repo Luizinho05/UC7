@@ -4,8 +4,8 @@
   }
   
   #fundo {
-    background: rgb(252, 173, 77);
-    padding: 5px;
+    background: rgb(238, 171, 47);
+    padding:0px;
     text-align: right;
     display: flex;
     flex-direction: row;
@@ -17,8 +17,8 @@
    }
   
    #banner {
-    width: 142px;
-    right: 142px;
+    width: 100px;
+    right: 100px;
     float: left;
   }
   
@@ -35,7 +35,7 @@
   }
   
   .pagina {
-    color: black;
+    color: rgb(199, 14, 14);
     text-align: right;
     display: inline-block;
     position: relative;
@@ -44,20 +44,8 @@
   2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
     border: none;
     font-family:fantasy;
-    font-size:22px;
-  }
-  
-  .paginas {
-    color: black;
-    text-align: right;
-    display: inline-block;
-    position: relative;
-    margin: 40px;
-    text-shadow: 3px 0 whitesmoke, -3px 0 whitesmoke, 0 3px whitesmoke, 0 -3px whitesmoke,
-    2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
-    border: none;
-    font-family:fantasy;
-    font-size:22px;
+    font-size:18px;
+    text-decoration: none;
   }
   
   .dropdown {
@@ -69,13 +57,7 @@
     display: block;
   }
   
-  .dropdown:hover .dropbtn {
-    background: rgba(0, 0, 0, 0.555);
-    font-style: oblique;
-    border-style: outset;
-    border-color:whitesmoke;
-    border-radius: 100px;
-  }
+  
   
   .dropbtn {
     background: transparent;
@@ -107,8 +89,8 @@
   }
   
   .dropdown-content a:hover {
-    background-color:black;
-    color:whitesmoke;
+    background-color:rgb(252, 173, 77);
+    color:black;
   }
   
   .Link {
