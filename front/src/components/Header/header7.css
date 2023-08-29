@@ -16,12 +16,6 @@
     cursor: pointer;
    }
   
-   #banner {
-    width: 100px;
-    right: 100px;
-    float: left;
-  }
-  
   .nomeLoja {
     color: whitesmoke;
     text-align: left;
@@ -34,7 +28,7 @@
     font-family:sans-serif;
   }
   
-  .pagina {
+  .ketchup {
     color: rgb(199, 14, 14);
     text-align: right;
     display: inline-block;
@@ -44,8 +38,22 @@
   2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
     border: none;
     font-family:fantasy;
-    font-size:18px;
+    font-size:24px;
     text-decoration: none;
+  }
+
+  .mostarda{
+      color: rgb(207, 207, 24);
+      text-align: right;
+      display: inline-block;
+      position: relative;
+      margin: 40px;
+      text-shadow: 3px 0 whitesmoke, -3px 0 whitesmoke, 0 3px whitesmoke, 0 -3px whitesmoke,
+    2px 2px whitesmoke, -2px -2px whitesmoke, 2px -2px whitesmoke, -2px 2px whitesmoke;
+      border: none;
+      font-family:fantasy;
+      font-size:24px;
+      text-decoration: none;
   }
   
   .dropdown {
@@ -65,7 +73,7 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    margin: 18px;
+    margin: 1px;
     border: none;
   }
   

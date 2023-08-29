@@ -19,7 +19,7 @@ function handleLogar(event){
 
     return(
      <div className='formularioU'>
-        <h1 id='temasiniciaisU'>Login de Usuário</h1>
+        <strong id='temasiniciaisU'>Login de Usuário</strong>
 
         <form onSubmit={handleLogar}><br/>
 

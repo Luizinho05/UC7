@@ -22,7 +22,7 @@ function handleCadastrar(event){
 
         return (
             <div id='formulariocadastroUsuario'>
-                <h1 className="temasiniciaiscadastroUsuario">Cadastro do Usuário</h1>
+                <strong className="temasiniciaiscadastroUsuario">Cadastro do Usuário</strong>
 
                 <form onSubmit={handleCadastrar}><br/>
 

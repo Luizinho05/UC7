@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
+import { FaTrashAlt, FaPen } from 'react-icons/fa'
 import api from '../services/api'
 import '../css/listausuario.css'
 
 
 export default function ListarUsuarios(){
 
-    const [usuario, setUsuarios] = useState ([''])
+    const [usuarios, setUsuarios] = useState ([''])
 
    useEffect (() => {
    async function loadUsuarios(){
@@ -14,7 +14,15 @@ export default function ListarUsuarios(){
        setUsuarios(response.data)
    }
    loadUsuarios()
-  }, [usuario])
+  }, [usuarios])
+
+ async function excluirUsuario(id){
+   await api.delete ('/ApagarUsuarios', {
+    data:{
+        remove: id
+    }
+   })
+}
 
  
 
@@ -23,17 +31,21 @@ export default function ListarUsuarios(){
         <div>
            <h1 className='TituloPagina'>Informações de Usuarios</h1>
 
-        {usuario.map((usuarios) => {
+        {usuarios.map((usuario) => {
 
             return(
 
-                   <article key={usuarios.id}>
+                   <article key={usuario.id}>
                          <strong className='Info linhaDivision'>______________________________</strong><br/>
                          <div className='Info'>
-                         <h3>{usuarios.nome}</h3>
-                         <h3>{usuarios.email}</h3>
+                         <h3>{usuario.nome}</h3>
+                         <h3>{usuario.email}</h3>
                         <h3 className='icones'>
-                         <FaTrashAlt size='1.4rem' color='red'/>
+                                <FaPen size='1.4rem' color='blue'/>
+                        </h3>
+                        <h3 className='icones'>
+                         <FaTrashAlt size='1.4rem' color='red'
+                         onClick={() => excluirUsuario(usuario.id)}/>
                             </h3>
                             </div>
                    </article> 

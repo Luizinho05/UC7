@@ -8,31 +8,31 @@ export default function Header() {
         <div id="fundo">
             
           <div class='dropdown'>
-            <button class='dropbtn'><Link class="pagina" to='/LoginU'>Login</Link></button>
+            <button class='dropbtn'><Link class="ketchup" to='/LoginU'>Login</Link></button>
           </div>
  
                 <div class='dropdown'>
-                   <button class='dropbtn'><Link class="pagina" to='/CadastroU'>Cadastro Usuário</Link></button>
+                   <button class='dropbtn'><Link class="mostarda" to='/CadastroU'>Cadastro Usuário</Link></button>
                 </div>
 
             <div class="dropdown">
-                <button class="dropbtn"><Link class="pagina" to='/CadastroC'>Cadastro Clientes</Link></button>
+                <button class="dropbtn"><Link class="ketchup" to='/CadastroC'>Cadastro Clientes</Link></button>
             </div>
 
             <div class="dropdown">
-                <button class="dropbtn"><Link class="pagina" to='/CadastroP'>Cadastro Produtos</Link></button>
+                <button class="dropbtn"><Link class="mostarda" to='/CadastroP'>Cadastro Produtos</Link></button>
             </div>
 
             <div class='dropdown'>
-                <button class='dropbtn'><Link class='pagina' to='/listacliente'>Listar Clientes</Link></button>
+                <button class='dropbtn'><Link class='ketchup' to='/listacliente'>Listar Clientes</Link></button>
             </div>
 
             <div class='dropdown'>
-               <button class='dropbtn'><Link class='pagina' to='/listaproduto'>Listar Produtos</Link></button>
+               <button class='dropbtn'><Link class='mostarda' to='/listaproduto'>Listar Produtos</Link></button>
             </div>
 
             <div class='dropdown'>
-                <button class='dropbtn'><Link class='pagina' to='/listausuario'>Listar Usuários</Link></button>
+                <button class='dropbtn'><Link class='ketchup' to='/listausuario'>Listar Usuários</Link></button>
             </div>
 
         </div>

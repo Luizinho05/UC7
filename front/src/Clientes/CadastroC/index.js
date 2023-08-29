@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './clientes.css'
 
 export default function ClienteCadastro() {
 
-const [nome, setNome] = useState ('')
-const [cpf_cnpj, setCpfCnpj] = useState ('')
-const [rg_ie, setRgIe] = useState ('')
-const [celular, setCelular] = useState ('')
-const [celularFixo, setCelfixo] = useState ('')
-const [rua, setRua] = useState ('')
-const [complemento, setComplemento] = useState ('')
-const [bairro, setBairro] = useState ('')
-const [cidade, setCidade] = useState ('')
+const [nome, setNome] = useState ([''])
+const [cpf_cnpj, setCpfCnpj] = useState ([''])
+const [rg_ie, setRgIe] = useState ([''])
+const [celular, setCelular] = useState ([''])
+const [celularFixo, setCelfixo] = useState ([''])
+const [rua, setRua] = useState ([''])
+const [complemento, setComplemento] = useState ([''])
+const [bairro, setBairro] = useState ([''])
+const [cidade, setCidade] = useState ([''])
 const [estado, setEstado] = useState ('')
 
 function handleCadastrar(event){
     event.preventDefault()
-    if ( !nome || !cpf_cnpj || !rg_ie || !celular || !celularFixo || !rua || !complemento ||
+    if ( !nome || !cpf_cnpj || !celular || !celularFixo || !rua || !complemento ||
         !bairro || !cidade || !estado ){
             alert('Existe Campos em Branco')
             return
@@ -26,8 +26,7 @@ function handleCadastrar(event){
 
         return (
             <div id='formulariocadastroCliente'>
-                <h1 className="temainicialCliente">Cadastro de Clientes</h1>
-
+                <strong className="temainicialCliente">Cadastro de Clientes</strong>
                 <form onSubmit={handleCadastrar}><br/>
 
                     <div className='estruturabonita'>

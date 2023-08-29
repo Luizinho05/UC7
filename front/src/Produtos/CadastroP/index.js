@@ -19,7 +19,7 @@ function handleCadastrar(event){
 
         return (
             <div id='formularioProduto'>
-                <h1 className="temasinicialProduto">Cadastro de Produtos</h1>
+                <strong className="temasinicialProduto">Cadastro de Produtos</strong>
 
                 <form onSubmit={handleCadastrar}><br/>
                     

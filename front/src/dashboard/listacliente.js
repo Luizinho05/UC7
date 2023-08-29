@@ -1,40 +1,50 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
+import { FaTrashAlt, FaPen } from 'react-icons/fa'
 import api from '../services/api'
 import '../css/listacliente.css'
 
 
 export default function ListarClientes(){
 
-    const [cliente, setClientes] = useState ([''])
+    const [clientes, setClientes] = useState ([''])
 
    useEffect (() => {
    async function loadClientes(){
    const response = await api.get ('/ListarClientes')
    setClientes(response.data)
-
    }
    loadClientes()
+  }, [clientes])
 
-  }, [cliente])
+  async function excluirCliente(id){
+    await api.delete('/ApagarClientes',{
+        data:{
+            excluir: id
+        }
+    })
+  }
 
      return(
 
         <div>
            <h1 className='titlePagina'>Informações dos Clientes</h1>
 
-        {cliente.map((clientes) => {
+        {clientes.map((cliente) => {
 
             return(
 
-                   <article key={clientes.id}>
+                   <article key={cliente.id}>
                          <strong className='dados linhadivisora'>______________________________</strong><br/>
                          <div className='dados'>
-                         <h3>{clientes.nome}</h3>
-                         <h3>{clientes.cpf_cnpj}</h3>
-                         <h3>{clientes.estado}</h3>
+                         <h3>{cliente.nome}</h3>
+                         <h3>{cliente.cpf_cnpj}</h3>
+                         <h3>{cliente.estado}</h3>
                             <h3 className='icons'>
-                                <FaTrashAlt size='1.4rem' color='red'/>
+                                <FaPen size='1.4rem' color='blue'/>
+                            </h3>
+                            <h3 className='icons'>
+                                <FaTrashAlt size='1.4rem' color='red'
+                                onClick={() =>excluirCliente(cliente.id)}/>
                             </h3>
                             </div>
                    </article> 

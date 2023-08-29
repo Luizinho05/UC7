@@ -4,7 +4,7 @@ export default function Home() {
 
     return (
         <div>
-           <h1>Ínicio</h1>
+           <strong id='temaInicio'>Ínicio</strong>
         </div>
 
 
