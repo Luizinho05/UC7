@@ -10,12 +10,16 @@ footer {
 .footer{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 #banner {
     width: 90px;
     right: 90px;
+  }
+
+  #fritas{
+    width: 110px;
+    right: 110px;
   }
 
   .logo{

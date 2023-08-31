@@ -38,7 +38,7 @@ export default function ListarClientes(){
                          <div className='dados'>
                          <h3>{cliente.nome}</h3>
                          <h3>{cliente.cpf_cnpj}</h3>
-                         <h3>{cliente.estado}</h3>
+                         <h3>{cliente.pais}</h3>
                             <h3 className='icons'>
                                 <FaPen size='1.4rem' color='blue'/>
                             </h3>

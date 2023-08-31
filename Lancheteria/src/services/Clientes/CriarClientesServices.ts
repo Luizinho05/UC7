@@ -11,6 +11,7 @@ interface CriarCliente{
     bairro:       string
     cidade:       string
     estado:       string
+    pais:         string
 }
 
 class CriarClientesServices{
@@ -24,8 +25,9 @@ class CriarClientesServices{
           complemento,
           bairro,
           cidade,
-          estado}: CriarCliente){
-        if(!nome || !cpf_cnpj || !rg_ie || !celular || !rua || !bairro || !cidade || !estado ){
+          estado,
+          pais}: CriarCliente){
+        if(!nome || !cpf_cnpj || !rg_ie || !celular || !rua || !bairro || !cidade || !estado || !pais ){
                 throw new Error('Campos em Branco não são permitidos')
             }
             const DocJaCadastrado = await prismaClient.clientes.findFirst({
@@ -56,7 +58,8 @@ class CriarClientesServices{
                     complemento: complemento,
                     bairro: bairro,
                     cidade: cidade,
-                    estado: estado
+                    estado: estado,
+                    pais: pais
                 }
             })
             return {dados: "Seus Dados foram Salvos com Sucesso"}

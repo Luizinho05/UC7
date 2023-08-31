@@ -41,6 +41,7 @@ model Clientes{
   bairro       String
   cidade       String
   estado       String
+  pais         String
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
