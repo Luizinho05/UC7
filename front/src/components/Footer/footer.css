@@ -5,21 +5,23 @@ footer {
     height: 71px;
     background: rgb(238, 171, 47);
     padding: 2;
+    text-align: center;
 }
 
-.footer{
+  #comidas{
     display: flex;
     flex-direction: row;
-}
-
-#banner {
-    width: 90px;
-    right: 90px;
+    justify-content:center;
   }
 
-  #fritas{
-    width: 110px;
-    right: 110px;
+#banner{
+  width: 90px;
+  right: 90px;
+}
+
+  .comida{
+    width: 70px;
+    right: 70px;
   }
 
   .logo{
@@ -30,3 +32,4 @@ footer {
 #element::-webkit-scrollbar {
     display: none;
 }
+
