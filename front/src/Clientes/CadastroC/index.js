@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import api from '../../services/api'
 import './clientes.css'
 
 export default function ClienteCadastro() {
@@ -12,22 +13,30 @@ const [rua, setRua] = useState ([''])
 const [complemento, setComplemento] = useState ([''])
 const [bairro, setBairro] = useState ([''])
 const [cidade, setCidade] = useState ([''])
-const [estado, setEstado] = useState ('')
+const [estado, setEstado] = useState ([''])
+const [pais, setPais ] = useState ([''])
 
-function handleCadastrar(event){
-    event.preventDefault()
-    if ( !nome || !cpf_cnpj || !celular || !celularFixo || !rua || !complemento ||
-        !bairro || !cidade || !estado ){
-            alert('Existe Campos em Branco')
-            return
-     }   
-     alert (`Nome: ${nome} \nCPFouCNPJ: ${cpf_cnpj} \nRGouIE: ${rg_ie} \nCelular: ${celular} \nCelularFixo: ${celularFixo} \nRua: ${rua} \nComplemento: ${complemento} \nBairro: ${bairro} \nCidade: ${cidade} \nEstado: ${estado} `)  
+function handleCadastrar(){
+    api.post("/CriarClientes", {
+    nome,
+    cpf_cnpj,
+    rg_ie,
+    celular,
+    celularFixo,
+    rua,
+    complemento,
+    bairro,
+    cidade,
+    estado,
+    pais
+    })
 }
+
 
         return (
             <div id='formulariocadastroCliente'>
                 <strong className="temainicialCliente">Cadastro de Clientes</strong>
-                <form onSubmit={handleCadastrar}><br/>
+                <form onSubmit={handleCadastrar} action='/listacliente'><br/>
 
                     <div className='estruturabonita'>
                     <label className="contatoCliente"><strong>Nome:</strong></label>
@@ -93,6 +102,14 @@ function handleCadastrar(event){
                     onChange={(e) => setEstado(e.target.value)}
                     />
                     </div>
+                    <div className='estruturabonita'>
+                    <label className='contatoCliente'><strong>País:</strong></label>
+                    <input id='espaçoC'
+                    type='text'
+                    value={pais}
+                    onChange={(e) => setPais(e.target.value)}
+                    />
+                    </div>
                     <br/><br/>
 
                     <button type='submit' className='botaodecadastroCliente'><strong className="cadastrarCliente">Cadastrar</strong></button>
@@ -100,5 +117,4 @@ function handleCadastrar(event){
                 </form>
         </div>
         )
-    
-}
+        }

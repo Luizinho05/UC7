@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import api from '../../services/api'
 import './produtos.css'
 
 export default function ProdutosCadastro() {
@@ -8,20 +9,20 @@ const [fabricante, setFabricante] = useState ('')
 const [quantidade, setQuantidade] = useState ('')
 const [preco, setPreco] = useState ('')
 
-function handleCadastrar(event){
-    event.preventDefault()
-    if ( !nome || !fabricante || !quantidade || !preco ){
-     alert('Existe Campos em Branco')
-     return
-    }   
-    alert (`Nome: ${nome} \nFabricante: ${fabricante} \nQuantidade: ${quantidade} \nPreço: ${preco}`)  
+function ProdutoCadastrar(){
+          api.post("/CriarProdutos", {
+            nome,
+            fabricante,
+            quantidade,
+            preco
+          })
 }
 
         return (
             <div id='formularioProduto'>
                 <strong className="temasinicialProduto">Cadastro de Produtos</strong>
 
-                <form onSubmit={handleCadastrar}><br/>
+                <form onSubmit={ProdutoCadastrar} action='/listaproduto'><br/>
                     
                     <div>
                     <label className="contatoProduto"><strong>Nome:</strong></label>
