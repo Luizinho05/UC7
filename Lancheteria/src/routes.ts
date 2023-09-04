@@ -1,10 +1,16 @@
 import { Router } from 'express'
+
+//Criar
 import { CriarUsuarioController } from './controllers/Usuarios/CriarUsuarioController'
 import { CriarClientesController } from './controllers/Clientes/CriarClientesController'
 import { CriarProdutosController } from './controllers/Produtos/CriarProdutosController'
+
+//Listar
 import { ListarClientesController } from './controllers/Clientes/ListaClienteController'
 import { ListarProdutosController } from './controllers/Produtos/ListarProdutoController'
 import { ListarUsuariosController } from './controllers/Usuarios/ListarUsuarioController'
+
+//Apagar
 import { ApagarUsuariosController } from './controllers/Usuarios/ApagarUsuariosController'
 import { ApagarProdutosController } from './controllers/Produtos/ApagarProdutosController'
 import { ApagarClientesController } from './controllers/Clientes/ApagarClientesController'
