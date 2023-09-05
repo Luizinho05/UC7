@@ -8,7 +8,7 @@ class ApagarClientesController{
         const apagar = await apagarClientesServices.execute({
             excluir
         })
-        return res.json (excluir)
+        return res.json (apagar)
     }
 }
 

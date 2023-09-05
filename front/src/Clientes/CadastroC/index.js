@@ -41,6 +41,7 @@ function handleCadastrar(){
                     <div className='estruturabonita'>
                     <input placeholder='Nome' id='espaçoC'
                    type='text'
+                   
                    value={nome}
                    onChange={(e) => setNome(e.target.value)}
                    /></div>
