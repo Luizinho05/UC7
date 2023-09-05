@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import api from '../../services/api'
 import './usuario.css'
 
 export default function CadastroU() {
@@ -11,36 +12,32 @@ const [senha, setSenha] = useState ('')
 
 
 
-function handleCadastrar(event){
-    event.preventDefault()
-    if ( !nome || !email || !senha ){
-        alert('Existe Campos em Branco') 
-     return
-    }    
-    alert (`Nome: ${nome} \nE-mail: ${email} \nSenha: ${senha}`) 
+function handleCadastrar(){
+   api.post("/CriarUsuarios", {
+    nome,
+    email,
+    senha
+   })
 }
 
         return (
             <div id='formulariocadastroUsuario'>
                 <strong className="temasiniciaiscadastroUsuario">Cadastro do Usuário</strong>
 
-                <form onSubmit={handleCadastrar}><br/>
+                <form onSubmit={handleCadastrar} action='/listausuario'><br/>
 
                     <div>
-                    <label className="contatoUsuario"><strong>Nome:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Nome' id='espaçoC'
                    type='text'
                    value={nome}
                    onChange={(e) => setNome(e.target.value)}
-                   /><br/><br/>
-                    <label className='contatoUsuario'><strong>E-mail:</strong></label>
-                    <input id='espaçoC'
+                   />
+                    <input placeholder='E-mail' id='espaçoC'
                     type='email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoUsuario'><strong>Senha:</strong></label>
-                    <input id='espaçoC'
+                    />
+                    <input placeholder='Digite a Senha' id='espaçoC'
                     type='password'
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}

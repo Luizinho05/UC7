@@ -9,15 +9,14 @@
     font-size:35px;
   }  
   
-  .contatoCliente{
-    color: black;
+  ::placeholder{
+    color: #DAA520;
     width: 100%;
     right: 100%;
     text-decoration: none;
-    font-size: 22px;
-   text-align: right;
-    
-  }  
+    font-size: 15px;
+   text-align: center;
+  }   
 
 .link{
   text-decoration: none;
@@ -45,9 +44,9 @@
   }  
 
   .estruturabonita{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display:flexbox;
+    flex-direction:row;
+    justify-content: space-around;
   }
   
   .botaodecadastroCliente{

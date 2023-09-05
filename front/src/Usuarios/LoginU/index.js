@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import api from '../../services/api'
 import './login.css'
 
 export default function LoginU(){
@@ -24,15 +25,13 @@ function handleLogar(event){
         <form onSubmit={handleLogar}><br/>
 
         <div>
-        <label><strong className='contatoU'>E-mail:</strong></label>
-        <input id='espaçoC'
+        <input placeholder='E-mail' id='espaçoC'
         type='email'
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        /></div><br/>
+        /></div>
         <div>
-        <label><strong className='contatoU'>Senha:</strong></label>
-        <input id='espaçoC'
+        <input placeholder='Digite a Senha' id='espaçoC'
         type='password'
         value={senha}
         onChange={(e) => setSenha(e.target.value)}

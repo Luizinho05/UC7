@@ -25,28 +25,24 @@ function ProdutoCadastrar(){
                 <form onSubmit={ProdutoCadastrar} action='/listaproduto'><br/>
                     
                     <div>
-                    <label className="contatoProduto"><strong>Nome:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Nome' id='espaçoC'
                    type='text'
                    value={nome}
                    onChange={(e) => setNome(e.target.value)}
                    /><br/>
-                    <label className='contatoProduto'><strong>Fabricante:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Fabricante' id='espaçoC'
                     type='text'
                     value={fabricante}
                     onChange={(e) => setFabricante(e.target.value)}
                     /><br/>
                     </div>
                     <div>
-                    <label className='contatoProduto'><strong>Quantidade:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Quantidade' id='espaçoC'
                     type='text'
                     value={quantidade}
                     onChange={(e) => setQuantidade(e.target.value)}
                     /><br/>
-                    <label className='contatoProduto'><strong>Preço:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Preço' id='espaçoC'
                     type='text'
                     value={preco}
                     onChange={(e) => setPreco(e.target.value)}

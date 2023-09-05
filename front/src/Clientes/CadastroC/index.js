@@ -39,79 +39,73 @@ function handleCadastrar(){
                 <form onSubmit={handleCadastrar} action='/listacliente'><br/>
 
                     <div className='estruturabonita'>
-                    <label className="contatoCliente"><strong>Nome:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Nome' id='espaçoC'
                    type='text'
                    value={nome}
                    onChange={(e) => setNome(e.target.value)}
-                   /><br/><br/>
-                    <label className='contatoCliente'><strong>CPF/CNPJ:</strong></label>
-                    <input id='espaçoC'
+                   /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='CPF/CNPJ' id='espaçoC'
                     type='text'
                     value={cpf_cnpj}
                     onChange={(e) => setCpfCnpj(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>RG/IE:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='RG/IE' id='espaçoC'
                     type='text'
                     value={rg_ie}
                     onChange={(e) => setRgIe(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>Celular:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='Celular' id='espaçoC'
                     type='text'
                     value={celular}
                     onChange={(e) => setCelular(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>Celular Fixo:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='Telefone Fixo' id='espaçoC'
                     type='text'
                     value={celularFixo}
                     onChange={(e) => setCelfixo(e.target.value)}
-                    />
-                    </div>
+                    /></div>
                     <div className='estruturabonita'>
-                    <label className='contatoCliente'><strong>Rua:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='Rua' id='espaçoC'
                     type='text'
                     value={rua}
                     onChange={(e) => setRua(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>Complemento:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='Complemento' id='espaçoC'
                     type='text'
                     value={complemento}
                     onChange={(e) => setComplemento(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>Bairro:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='Bairro' id='espaçoC'
                     type='text'
                     value={bairro}
                     onChange={(e) => setBairro(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>Cidade:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='Cidade' id='espaçoC'
                     type='text'
                     value={cidade}
                     onChange={(e) => setCidade(e.target.value)}
-                    /><br/><br/>
-                    <label className='contatoCliente'><strong>Estado:</strong></label>
-                    <input id='espaçoC'
+                    /></div>
+                    <div className='estruturabonita'>
+                    <input placeholder='Estado' id='espaçoC'
                     type='text'
                     value={estado}
                     onChange={(e) => setEstado(e.target.value)}
-                    />
-                    </div>
+                    /></div>
                     <div className='estruturabonita'>
-                    <label className='contatoCliente'><strong>País:</strong></label>
-                    <input id='espaçoC'
+                    <input placeholder='País' id='espaçoC'
                     type='text'
                     value={pais}
                     onChange={(e) => setPais(e.target.value)}
-                    />
-                    </div>
+                    /></div>
                     <br/><br/>
-
+                    
                     <button type='submit' className='botaodecadastroCliente'><strong className="cadastrarCliente">Cadastrar</strong></button>
 
                 </form>

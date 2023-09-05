@@ -11,10 +11,13 @@
     font-size:35px;
   }  
   
-  .contatoU{
-    color: black;
-    font-size: 22px;
-    text-align: left;
+  ::placeholder{
+    color: #DAA520;
+    width: 100%;
+    right: 100%;
+    text-decoration: none;
+    font-size: 15px;
+   text-align: center;
   }  
   
 
