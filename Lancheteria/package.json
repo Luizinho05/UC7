@@ -7,7 +7,7 @@
     "dev": "ts-node-dev src/server.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Luiz Henrique",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.1.1",
