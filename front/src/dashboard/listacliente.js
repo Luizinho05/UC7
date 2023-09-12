@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt, FaPen } from 'react-icons/fa'
+import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
 import api from '../services/api'
 import '../css/listacliente.css'
-
 
 export default function ListarClientes(){
 
@@ -40,7 +39,7 @@ export default function ListarClientes(){
                          <h3>{cliente.cpf_cnpj}</h3>
                          <h3>{cliente.pais}</h3>
                             <h3 className='icons'>
-                                <FaPen size='1.4rem' color='blue'/>
+                                <FaHighlighter size='1.4rem' color='blue'/>
                             </h3>
                             <h3 className='icons'>
                                 <FaTrashAlt size='1.4rem' color='red'

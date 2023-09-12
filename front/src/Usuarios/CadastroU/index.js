@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import api from '../../services/api'
 import './usuario.css'
 
@@ -9,11 +10,8 @@ const [email, setEmail] = useState ('')
 const [senha, setSenha] = useState ('')
 
 
-
-
-
-function handleCadastrar(){
-   api.post("/CriarUsuarios", {
+async function handleCadastrar(){
+    api.post("/CriarUsuarios", {
     nome,
     email,
     senha

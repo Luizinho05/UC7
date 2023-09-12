@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt, FaPen } from 'react-icons/fa'
+import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
 import api from '../services/api'
 import '../css/listaproduto.css'
 
@@ -40,7 +40,7 @@ export default function ListarProdutos(){
                          <h3>{produto.quantidade}</h3>
                          <h3>{produto.preco}</h3>
                             <h3 className='Icons'>
-                                <FaPen size='1.4rem' color='blue'/>
+                                <FaHighlighter size='1.4rem' color='blue'/>
                             </h3>
                             <h3 className='Icons'>
                                 <FaTrashAlt size='1.4rem' color='red'
