@@ -7,10 +7,11 @@ import LoginU from './Usuarios/LoginU'
 import CadastroU from './Usuarios/CadastroU'
 import ProdutosCadastro from './Produtos/CadastroP'
 import ClienteCadastro from './Clientes/CadastroC'
-import ListarClientes from './dashboard/listacliente'
-import ListarProdutos from './dashboard/listaproduto'
-import ListarUsuarios from './dashboard/listausuario'
+import ListarClientes from './Clientes/ListarC/listacliente'
+import ListarProdutos from './Produtos/ListarP/listaproduto'
+import ListarUsuarios from './Usuarios/ListarU/listausuario'
 import AlterarUsuario from './Usuarios/AlterarU'
+import Dashboard from './dashboard/dashboard'
 
 export default function Rotas(){
     return(
@@ -25,7 +26,8 @@ export default function Rotas(){
             <Route path='/listacliente' element={ <ListarClientes /> } />
             <Route path='/listaproduto' element={ <ListarProdutos /> } />
             <Route path='/listausuario' element={ <ListarUsuarios /> } />
-            <Route path='/AlterarU' element={ <AlterarUsuario /> } />
+            <Route path='/AlterarU/:id' element={ <AlterarUsuario /> } />
+            <Route path='/dashboard' element={ <Dashboard /> } />
         </Routes>
         <Footer />
         </BrowserRouter>

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
-import api from '../services/api'
-import '../css/listaproduto.css'
+import api from '../../services/api'
+import '../../css/listaproduto.css'
 
 
 export default function ListarProdutos(){

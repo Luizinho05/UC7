@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react'
 
 import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
 import { toast } from 'react-toastify'
-import api from '../services/api'
-import '../css/listausuario.css'
+import api from '../../services/api'
+import { Link } from 'react-router-dom'
+import '../../css/listausuario.css'
 
 
 export default function ListarUsuarios(){
@@ -27,9 +28,9 @@ export default function ListarUsuarios(){
   toast.success(resposta.data.dados)
 }
 
-async function alterarUsuario(id){
-    alert(id)
-}
+//async function alterarUsuario(id){
+    //alert(id)
+//}
 
      return(
 
@@ -42,17 +43,15 @@ async function alterarUsuario(id){
 
                    <article key={usuario.id}>
                          <strong className='Info linhaDivision'>______________________________</strong><br/>
-                         <div className='Info'>
+                          <div className='Info'>
                          <h3>{usuario.nome}</h3>
                          <h3>{usuario.email}</h3>
                         <h3 className='icones'>
-                         <FaHighlighter size='1.4rem' color='blue'
-                         onClick={() => alterarUsuario(usuario.id)}/>
+                         <Link to ={`/AlterarU/${usuario.id}`}><FaHighlighter size='1.4rem' color='blue'/></Link>
                         </h3>
                         <h3 className='icones'>
-                         <FaTrashAlt size='1.4rem' color='red'
-                         onClick={() => excluirUsuario(usuario.id)}/>
-                            </h3>
+                         <FaTrashAlt size='1.4rem' color='red' onClick={() => excluirUsuario(usuario.id)}/>
+                        </h3>
                             </div>
                    </article> 
                    )

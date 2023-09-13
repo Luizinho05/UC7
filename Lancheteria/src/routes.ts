@@ -10,6 +10,10 @@ import { ListarClientesController } from './controllers/Clientes/ListaClienteCon
 import { ListarProdutosController } from './controllers/Produtos/ListarProdutoController'
 import { ListarUsuariosController } from './controllers/Usuarios/ListarUsuarioController'
 
+//Listar único
+
+import { ListarUsuarioUnicoController } from './controllers/Usuarios/ListarUsuarioUnicoController'
+
 //Apagar
 import { ApagarUsuariosController } from './controllers/Usuarios/ApagarUsuariosController'
 import { ApagarProdutosController } from './controllers/Produtos/ApagarProdutosController'
@@ -21,6 +25,7 @@ const router = Router()
 //Usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle)
 router.get('/ListarUsuarios', new ListarUsuariosController().handle)
+router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUnicoController().handle)
 router.delete('/ApagarUsuarios', new ApagarUsuariosController().handle)
 
 //Clientes
