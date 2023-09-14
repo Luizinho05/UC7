@@ -11,8 +11,9 @@ import { ListarProdutosController } from './controllers/Produtos/ListarProdutoCo
 import { ListarUsuariosController } from './controllers/Usuarios/ListarUsuarioController'
 
 //Listar único
-
 import { ListarUsuarioUnicoController } from './controllers/Usuarios/ListarUsuarioUnicoController'
+import { ListarClienteUnicoController } from './controllers/Clientes/ListarClienteUnicoController'
+import { ListarProdutoUnicoController } from './controllers/Produtos/ListarProdutoUnicoController'
 
 //Apagar
 import { ApagarUsuariosController } from './controllers/Usuarios/ApagarUsuariosController'
@@ -31,11 +32,13 @@ router.delete('/ApagarUsuarios', new ApagarUsuariosController().handle)
 //Clientes
 router.post('/CriarClientes', new CriarClientesController().handle)
 router.get('/ListarClientes', new ListarClientesController().handle)
+router.get('/ListarClienteUnico/:id', new ListarClienteUnicoController().handle)
 router.delete('/ApagarClientes', new ApagarClientesController().handle)
 
 //Produtos
 router.post('/CriarProdutos', new CriarProdutosController().handle)
 router.get('/ListarProdutos', new ListarProdutosController().handle)
+router.get('/ListarProdutoUnico/:id', new ListarProdutoUnicoController().handle)
 router.delete('/ApagarProdutos', new ApagarProdutosController().handle)
 
 export{router}

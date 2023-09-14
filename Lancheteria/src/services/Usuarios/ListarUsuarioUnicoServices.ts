@@ -6,7 +6,7 @@ interface ListarUsuarioUnico{
 
 class ListarUsuarioUnicoServices{
     async execute({id}: ListarUsuarioUnico){
-       console.log(id)
+       
        const resposta = await prismaClient.user.findUnique({
             where:{
                 id: id
