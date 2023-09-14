@@ -5,10 +5,10 @@ class ListarUsuarioUnicoController{
      async handle(req: Request, res: Response){
      const { id } = req.params
      const listarUsuarioUnicoServices = new ListarUsuarioUnicoServices()
-     const retorno = await listarUsuarioUnicoServices.execute({
+     const resposta = await listarUsuarioUnicoServices.execute({
           id
      })
-     return res.json(retorno)
+     return res.json(resposta)
      }
 }
 
