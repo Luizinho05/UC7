@@ -1,8 +1,8 @@
 .formularioAlterado{
     text-align: center;
-    display: flex;
+    display: flexbox;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content:space-around;
     margin: 20px;
     }
     
@@ -26,18 +26,19 @@
       text-decoration: none;
     }
     
-  
+   #valor{
+    font-size: 20px;
+    color: black;
+   }
+
     .altera{
       color:#DAA520;
       padding:15px;
       cursor: pointer;
-    }  
-    
-    .botaoaltera{
       background-color: black;
       border-style:outset;
-      border-radius: 100px 100px 100px 100px;
-      bottom:100px;
+      border-radius: 50px 50px 50px 50px;
+      bottom:10px;
       border-color: #DAA520;
-      font-size:16px;
-    }
+      font-size:15px;
+    }  

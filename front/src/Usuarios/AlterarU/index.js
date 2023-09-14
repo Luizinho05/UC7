@@ -28,20 +28,21 @@ export default function AlterarUsuario(){
             <h1 id='temainicialAltera'>Alterar Usuário</h1>
 
             <form><br/>
-                <label>Nome:</label>
+                
+                <label id='valor'>Nome:</label>
                 <input id='espaçoA'
                 type='text'
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 />
-                <label>E-mail:</label>
+                <label id='valor'>E-mail:</label>
                 <input id='espaçoA'
                 type='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <button type='submit' className='altera'><strong className='botaoaltera'>Alterar</strong></button>
+                <button type='submit' className='altera'><strong>Alterar</strong></button>
             </form>
         </div>
     )
