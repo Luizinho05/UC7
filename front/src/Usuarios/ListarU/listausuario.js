@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'
-
 import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import api from '../../services/api'

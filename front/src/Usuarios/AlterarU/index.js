@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import api from '../../services/api'
 import './alterarUsuario.css'
 
@@ -44,6 +45,7 @@ export default function AlterarUsuario(){
 
                 <button type='submit' className='altera'><strong>Alterar</strong></button>
             </form>
+            <Link to='/CadastroU'>Voltar para o cadastro</Link>
         </div>
     )
 }
