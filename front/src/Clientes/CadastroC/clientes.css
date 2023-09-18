@@ -1,9 +1,11 @@
 #formulariocadastroCliente{
-  text-align: center;
-  float: none;
+ text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
   margin: 20px;
   }
-  
+
   .temainicialCliente{
     color:black;
     font-size:35px;
@@ -43,12 +45,6 @@
     cursor: pointer;
   }  
 
-  .estruturabonita{
-    display:flexbox;
-    flex-direction:row;
-    justify-content: space-around;
-  }
-  
   .botaodecadastroCliente{
     background-color: black;
     border-style:outset;

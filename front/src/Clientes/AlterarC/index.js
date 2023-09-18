@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import api from '../../services/api'
-// importar css
+import './Alterarcliente.css'
 
 export default function AlterarCliente(){
 
+    const navigation = useNavigate()
     const { id } = useParams()
     const [listaClienteUnico, setListaClienteUnico] = useState ('')
-    const [celular, setCelular] = useState ('')
-    const [rua, setRua] = useState ('')
-    const [complemento, setComplemento] = useState ('')
-    const [bairro, setBairro] = useState ('')
-    const [cidade, setCidade] = useState ('')
-    const [estado, setEstado] = useState ('')
-    const [pais, setPais] = useState ('')
+    const [alteraCelular, setAlteraCelular] = useState ('')
+    const [alteraRua, setAlteraRua] = useState ('')
+    const [alteraComplemento, setAlteraComplemento] = useState ('')
+    const [alteraBairro, setAlteraBairro] = useState ('')
+    const [alteraCidade, setAlteraCidade] = useState ('')
+    const [alteraEstado, setAlteraEstado] = useState ('')
+    const [alteraPais, setAlteraPais] = useState ('')
 
     useEffect(() => {
         async function listarClienteUnico(){
@@ -25,67 +26,84 @@ export default function AlterarCliente(){
     }, [id])
 
 useEffect(() => {
-    setCelular(listaClienteUnico.celular)
-    setRua(listaClienteUnico.rua)
-    setComplemento(listaClienteUnico.complemento)
-    setBairro(listaClienteUnico.bairro)
-    setCidade(listaClienteUnico.cidade)
-    setEstado(listaClienteUnico.estado)
-    setPais(listaClienteUnico.pais)
+    setAlteraCelular(listaClienteUnico.alteraCelular)
+    setAlteraRua(listaClienteUnico.alteraRua)
+    setAlteraComplemento(listaClienteUnico.alteraComplemento)
+    setAlteraBairro(listaClienteUnico.alteraBairro)
+    setAlteraCidade(listaClienteUnico.alteraCidade)
+    setAlteraEstado(listaClienteUnico.alteraEstado)
+    setAlteraPais(listaClienteUnico.alteraPais)
 }, [listaClienteUnico])
 
+    async function AlterarCliente(e){
+        e.preventDefault()
+        const resposta = await api.put('/AlterarCliente', {
+            id,
+            alteraCelular,
+            alteraRua,
+            alteraComplemento,
+            alteraBairro,
+            alteraCidade,
+            alteraEstado,
+            alteraPais
+        })
+        toast.info(resposta.data.dados)
+        navigation('/listacliente')
+    }
 
     return(
-    <div>
-        <h1>Alterar Cliente</h1>
+    <div className='estruturaAlterado'>
+        <h1 id='tituloAltera'>Alterar Cliente</h1>
 
-        <form><br/>
-          <label>Celular:</label>
-          <input
+        <form onSubmit={AlterarCliente}><br/>
+        
+            
+            <label id='atributos'>Celular:</label>
+          <input placeholder='Digite o Celular' id='digitação'
           type='tel'
-          value={celular}
-          onChange={(e) => setCelular(e.target.value)}
+          value={alteraCelular}
+          onChange={(e) => setAlteraCelular(e.target.value)}
           />
-          <label>Rua:</label>
-          <input
+           <label id='atributos'>Rua:</label>
+          <input placeholder='Digite a Rua' id='digitação'
           type='text'
-          value={rua}
-          onChange={(e) => setRua(e.target.value)}
+          value={alteraRua}
+          onChange={(e) => setAlteraRua(e.target.value)}
           />
-          <label>Complemento:</label>
-          <input
+            <label id='atributos'>Complemento:</label>
+          <input placeholder='Digite o Complemento' id='digitação'
           type='text'
-          value={complemento}
-          onChange={(e) => setComplemento(e.target.value)}
+          value={alteraComplemento}
+          onChange={(e) => setAlteraComplemento(e.target.value)}
           />
-          <label>Bairro:</label>
-          <input 
+          <label id='atributos'>Bairro:</label>
+          <input placeholder='Digite o Bairro' id='digitação'
           type='text'
-          value={bairro}
-          onChange={(e) => setBairro(e.target.value)}
+          value={alteraBairro}
+          onChange={(e) => setAlteraBairro(e.target.value)}
           />
-          <label>Cidade:</label>
-          <input
+          <label id='atributos'>Cidade:</label>
+          <input placeholder='Digite a Cidade' id='digitação'
           type='text'
-          value={cidade}
-          onChange={(e) => setCidade(e.target.value)}
+          value={alteraCidade}
+          onChange={(e) => setAlteraCidade(e.target.value)}
           />
-          <label>Estado:</label>
-          <input
+          <label id='atributos'>Estado:</label>
+          <input placeholder='Digite o Estado' id='digitação'
           type='text'
-          value={estado}
-          onChange={(e) => setEstado(e.target.value)}
-          />
-          <label>País:</label>
-          <input
+          value={alteraEstado}
+          onChange={(e) => setAlteraEstado(e.target.value)}
+          /><br/>
+          <label id='atributos'>Pais:</label>
+          <input placeholder='Digite o País' id='digitação'
           type='text'
-          value={pais}
-          onChange={(e) => setPais(e.target.value)}
+          value={alteraPais}
+          onChange={(e) => setAlteraPais(e.target.value)}
           />
+          <br/><br/>
 
-          <button type='submit'>Alterar</button>
+          <button type='submit' className='alteraCliente'><strong>Alterar</strong></button>
         </form>
-        <Link to='/CadastroC'>Voltar para o cadastro</Link>
     </div>
     )
 }

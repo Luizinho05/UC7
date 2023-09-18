@@ -20,6 +20,11 @@ import { ApagarUsuariosController } from './controllers/Usuarios/ApagarUsuariosC
 import { ApagarProdutosController } from './controllers/Produtos/ApagarProdutosController'
 import { ApagarClientesController } from './controllers/Clientes/ApagarClientesController'
 
+//Alterar
+
+import { AlterarClienteController } from './controllers/Clientes/AlterarClientesController'
+import { AlterarUsuarioController } from './controllers/Usuarios/AlterarUsuarioController'
+import { AlterarProdutoController } from './controllers/Produtos/AlterarProdutoController'
 
 const router = Router()
 
@@ -27,18 +32,21 @@ const router = Router()
 router.post('/CriarUsuarios', new CriarUsuarioController().handle)
 router.get('/ListarUsuarios', new ListarUsuariosController().handle)
 router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUnicoController().handle)
+router.put('/AlterarUsuario', new AlterarUsuarioController().handle)
 router.delete('/ApagarUsuarios', new ApagarUsuariosController().handle)
 
 //Clientes
 router.post('/CriarClientes', new CriarClientesController().handle)
 router.get('/ListarClientes', new ListarClientesController().handle)
 router.get('/ListarClienteUnico/:id', new ListarClienteUnicoController().handle)
+router.put('/AlterarCliente', new AlterarClienteController().handle)
 router.delete('/ApagarClientes', new ApagarClientesController().handle)
 
 //Produtos
 router.post('/CriarProdutos', new CriarProdutosController().handle)
 router.get('/ListarProdutos', new ListarProdutosController().handle)
 router.get('/ListarProdutoUnico/:id', new ListarProdutoUnicoController().handle)
+router.put('/AlterarProduto', new AlterarProdutoController().handle)
 router.delete('/ApagarProdutos', new ApagarProdutosController().handle)
 
 export{router}

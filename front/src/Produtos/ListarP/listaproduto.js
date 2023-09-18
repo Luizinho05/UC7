@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
 import api from '../../services/api'
+import {toast} from 'react-toastify'
+import { Link } from 'react-router-dom'
 import '../../css/listaproduto.css'
 
 
@@ -17,11 +19,12 @@ export default function ListarProdutos(){
   }, [produtos])
 
   async function excluirProduto(id){
-    await api.delete('/ApagarProdutos',{
+    const resposta = await api.delete('/ApagarProdutos',{
         data:{
             deletar: id
         }
     })
+    toast.success(resposta.data.dados)
   }
 
      return(
@@ -40,7 +43,7 @@ export default function ListarProdutos(){
                          <h3>{produto.quantidade}</h3>
                          <h3>{produto.preco}</h3>
                             <h3 className='Icons'>
-                                <FaHighlighter size='1.4rem' color='blue'/>
+                                <Link to={`/AlterarP/${produto.id}`}><FaHighlighter size='1.4rem' color='blue'/></Link>
                             </h3>
                             <h3 className='Icons'>
                                 <FaTrashAlt size='1.4rem' color='red'

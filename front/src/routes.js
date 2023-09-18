@@ -12,6 +12,7 @@ import ListarProdutos from './Produtos/ListarP/listaproduto'
 import ListarUsuarios from './Usuarios/ListarU/listausuario'
 import AlterarUsuario from './Usuarios/AlterarU'
 import AlterarCliente from './Clientes/AlterarC'
+import AlterarProduto from './Produtos/AlterarP'
 import Dashboard from './dashboard/dashboard'
 
 export default function Rotas(){
@@ -29,6 +30,7 @@ export default function Rotas(){
             <Route path='/listausuario' element={ <ListarUsuarios /> } />
             <Route path='/AlterarU/:id' element={ <AlterarUsuario /> } />
             <Route path='/AlterarC/:id' element={ <AlterarCliente /> } />
+            <Route path='/AlterarP/:id' element={ <AlterarProduto /> } />
             <Route path='/dashboard' element={ <Dashboard /> } />
         </Routes>
         <Footer />

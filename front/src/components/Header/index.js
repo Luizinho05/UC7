@@ -16,23 +16,23 @@ export default function Header() {
             </div>
 
             <div class="dropdown">
-                <button class="dropbtn"><Link class="ketchup" to='/CadastroC'>Cadastro Clientes</Link></button>
+                <button class="dropbtn"><Link class="ketchup" to='/CadastroC'>Cadastro Cliente</Link></button>
             </div>
 
             <div class="dropdown">
-                <button class="dropbtn"><Link class="mostarda" to='/CadastroP'>Cadastro Produtos</Link></button>
+                <button class="dropbtn"><Link class="mostarda" to='/CadastroP'>Cadastro Produto</Link></button>
             </div>
 
             <div class='dropdown'>
-                <button class='dropbtn'><Link class='ketchup' to='/listacliente'>Listar Clientes</Link></button>
+                <button class='dropbtn'><Link class='ketchup' to='/listausuario'>Listar Usuário</Link></button>
             </div>
 
             <div class='dropdown'>
-               <button class='dropbtn'><Link class='mostarda' to='/listaproduto'>Listar Produtos</Link></button>
+               <button class='dropbtn'><Link class='mostarda' to='/listacliente'>Listar Cliente</Link></button>
             </div>
 
             <div class='dropdown'>
-                <button class='dropbtn'><Link class='ketchup' to='/listausuario'>Listar Usuários</Link></button>
+                <button class='dropbtn'><Link class='ketchup' to='/listaproduto'>Listar Produto</Link></button>
             </div>
 
         </div>
