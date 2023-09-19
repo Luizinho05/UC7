@@ -1,28 +1,32 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 import './usuario.css'
 
 export default function CadastroU() {
 
+const navigation = useNavigate()
 const [nome, setNome] = useState ('')
 const [email, setEmail] = useState ('')
 const [senha, setSenha] = useState ('')
 
 
 async function handleCadastrar(){
-    api.post("/CriarUsuarios", {
+  api.post("/CriarUsuarios", {
     nome,
     email,
     senha
    })
+   toast.info('Usuário cadastrado com sucesso!')
+   navigation('/listausuario')
 }
 
         return (
             <div id='formulariocadastroUsuario'>
                 <strong className="temasiniciaiscadastroUsuario">Cadastro do Usuário</strong>
 
-                <form onSubmit={handleCadastrar} action='/listausuario'><br/>
+                <form onSubmit={handleCadastrar}><br/>
 
                     <div>
                     <input placeholder='Nome' id='espaçoC'

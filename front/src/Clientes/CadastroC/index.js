@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 import './clientes.css'
 
 export default function ClienteCadastro() {
 
+const navigation = useNavigate()
 const [nome, setNome] = useState ([''])
 const [cpf_cnpj, setCpfCnpj] = useState ([''])
 const [rg_ie, setRgIe] = useState ([''])
@@ -30,13 +33,15 @@ function handleCadastrar(){
     estado,
     pais
     })
+    toast.info('Cliente cadastrado com sucesso!')
+    navigation('/listacliente')
 }
 
 
         return (
             <div id='formulariocadastroCliente'>
                 <strong className="temainicialCliente">Cadastro de Clientes</strong>
-                <form onSubmit={handleCadastrar} action='/listacliente'><br/>
+                <form onSubmit={handleCadastrar}><br/>
 
                     <div>
                     <input placeholder='Nome' id='espaçoC'

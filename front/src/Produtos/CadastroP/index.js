@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 import './produtos.css'
 
 export default function ProdutosCadastro() {
 
+const navigation = useNavigate()
 const [nome, setNome] = useState ('')
 const [fabricante, setFabricante] = useState ('')
 const [quantidade, setQuantidade] = useState ('')
@@ -16,13 +19,15 @@ function ProdutoCadastrar(){
             quantidade,
             preco
           })
+          toast.info('Produto cadastrado com sucesso!')
+          navigation('/listaproduto')
 }
 
         return (
             <div id='formularioProduto'>
                 <strong className="temasinicialProduto">Cadastro de Produtos</strong>
 
-                <form onSubmit={ProdutoCadastrar} action='/listaproduto'><br/>
+                <form onSubmit={ProdutoCadastrar}><br/>
                     
                     <div>
                     <input placeholder='Nome' id='espaçoC'
