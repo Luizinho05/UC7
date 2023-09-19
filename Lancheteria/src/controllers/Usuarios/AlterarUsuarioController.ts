@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+import { Response, Request } from 'express'
 import { AlterarUsuarioServices } from '../../services/Usuarios/AlterarUsuariosServices'
 
 class AlterarUsuarioController{
