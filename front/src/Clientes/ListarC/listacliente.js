@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
+import { FaTrashAlt, FaPencilAlt  } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import api from '../../services/api'
@@ -42,7 +42,7 @@ export default function ListarClientes(){
                          <h3>{cliente.cpf_cnpj}</h3>
                          <h3>{cliente.pais}</h3>
                             <h3 className='icons'>
-                                <Link to={`/AlterarC/${cliente.id}`}><FaHighlighter size='1.4rem' color='blue'/></Link>
+                                <Link to={`/AlterarC/${cliente.id}`}><FaPencilAlt size='1.4rem' color='green'/></Link>
                             </h3>
                             <h3 className='icons'>
                                 <FaTrashAlt size='1.4rem' color='red'

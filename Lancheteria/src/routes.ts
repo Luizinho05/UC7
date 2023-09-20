@@ -21,15 +21,18 @@ import { ApagarProdutosController } from './controllers/Produtos/ApagarProdutosC
 import { ApagarClientesController } from './controllers/Clientes/ApagarClientesController'
 
 //Alterar
-
 import { AlterarClienteController } from './controllers/Clientes/AlterarClientesController'
 import { AlterarUsuarioController } from './controllers/Usuarios/AlterarUsuarioController'
 import { AlterarProdutoController } from './controllers/Produtos/AlterarProdutoController'
+
+//Autenticar
+import { AuthLoginController } from './controllers/Usuarios/AuthLoginController'
 
 const router = Router()
 
 //Usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle)
+router.post('/AutenticarUsuario', new AuthLoginController().handle)
 router.get('/ListarUsuarios', new ListarUsuariosController().handle)
 router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUnicoController().handle)
 router.put('/AlterarUsuario', new AlterarUsuarioController().handle)

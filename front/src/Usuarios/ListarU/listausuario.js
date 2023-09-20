@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
+import { FaTrashAlt, FaPencilAlt } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import api from '../../services/api'
 import { Link } from 'react-router-dom'
@@ -46,7 +46,7 @@ export default function ListarUsuarios(){
                          <h3>{usuario.nome}</h3>
                          <h3>{usuario.email}</h3>
                         <h3 className='icones'>
-                         <Link to ={`/AlterarU/${usuario.id}`}><FaHighlighter size='1.4rem' color='blue'/></Link>
+                         <Link to ={`/AlterarU/${usuario.id}`}><FaPencilAlt size='1.4rem' color='green'/></Link>
                         </h3>
                         <h3 className='icones'>
                          <FaTrashAlt size='1.4rem' color='red' onClick={() => excluirUsuario(usuario.id)}/>

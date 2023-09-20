@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { FaTrashAlt, FaHighlighter } from 'react-icons/fa'
+import { FaTrashAlt, FaPencilAlt } from 'react-icons/fa'
 import api from '../../services/api'
 import {toast} from 'react-toastify'
 import { Link } from 'react-router-dom'
@@ -43,12 +43,11 @@ export default function ListarProdutos(){
                          <h3>{produto.quantidade}</h3>
                          <h3>{produto.preco}</h3>
                             <h3 className='Icons'>
-                                <Link to={`/AlterarP/${produto.id}`}><FaHighlighter size='1.4rem' color='blue'/></Link>
+                                <Link to={`/AlterarP/${produto.id}`}><FaPencilAlt size='1.4rem' color='green'/></Link>
                             </h3>
                             <h3 className='Icons'>
                                 <FaTrashAlt size='1.4rem' color='red'
                                 onClick={() => excluirProduto(produto.id)}/>
-                                 
                             </h3>
                             </div>
                    </article> 

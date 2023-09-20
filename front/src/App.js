@@ -7,9 +7,9 @@ function App() {
     <div>
      <Rotas/>
      <ToastContainer
-     position="top-center"
+     position="bottom-right"
      autoClose={5000}
-     theme="colored"
+     theme="dark"
      />
     </div>
   )

@@ -1,29 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import api from '../../services/api'
 import './login.css'
 
 export default function LoginU(){
     
-const [email, setEmail] = useState ('')
-const [senha, setSenha] = useState ('')
+const navigation = useNavigate()
+const [email, setEmail] = useState ([''])
+const [password, setPassword] = useState ([''])
 
 
-function handleLogar(event){
-    event.preventDefault()
-    if ( !email || !senha){
-        alert('Tem Campos em branco')
+async function AuntenticarUsuario(e){
+    e.preventDefault()
+    if(!email || !password){
+        toast.warn('Existem campos em branco')
         return
     }
-    alert (`E-mail: ${email} \nSenha: ${senha}`)
+    try{
+    const resposta = await api.post('/AutenticarUsuario', {
+       email,
+       password
+    })
+    navigation('/dashboard')
+    toast.success(resposta.data.dados)
+    }catch(err){
+      toast.error(err.response.data.error)
+    }
 }
-
 
     return(
      <div className='formularioU'>
-        <strong id='temasiniciaisU'>Login de Usuário</strong>
+        <strong id='temasiniciaisU'>Login</strong>
 
-        <form onSubmit={handleLogar}><br/>
+        <form onSubmit={AuntenticarUsuario}><br/>
 
         <div>
         <input placeholder='E-mail' id='espaçoC'
@@ -34,8 +44,8 @@ function handleLogar(event){
         <div>
         <input placeholder='Digite a Senha' id='espaçoC'
         type='password'
-        value={senha}
-        onChange={(e) => setSenha(e.target.value)}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         /></div>
         <br/><br/>
               
