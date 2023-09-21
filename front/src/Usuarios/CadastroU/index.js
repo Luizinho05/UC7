@@ -12,13 +12,18 @@ const [email, setEmail] = useState ('')
 const [senha, setSenha] = useState ('')
 
 
-async function handleCadastrar(){
+async function handleCadastrar(e){
+  e.preventDefault()
+  if(!nome || !email || !senha){
+    toast.warn('Existem campos em branco!')
+    return
+  }
   api.post("/CriarUsuarios", {
     nome,
     email,
     senha
    })
-   toast.info('Usuário cadastrado com sucesso!')
+   toast.success('Usuário cadastrado com sucesso!')
    navigation('/listausuario')
 }
 

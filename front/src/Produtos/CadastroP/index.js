@@ -12,15 +12,20 @@ const [fabricante, setFabricante] = useState ('')
 const [quantidade, setQuantidade] = useState ('')
 const [preco, setPreco] = useState ('')
 
-function ProdutoCadastrar(){
-          api.post("/CriarProdutos", {
-            nome,
-            fabricante,
-            quantidade,
-            preco
+function ProdutoCadastrar(e){
+       e.preventDefault()
+     if(!nome || !fabricante || !quantidade || !preco){
+     toast.warn('Existem campos em branco!')
+      return
+    }
+      api.post("/CriarProdutos", {
+        nome,
+        fabricante,
+        quantidade,
+        preco
           })
-          toast.info('Produto cadastrado com sucesso!')
-          navigation('/listaproduto')
+        toast.success('Produto cadastrado com sucesso!')
+        navigation('/listaproduto')
 }
 
         return (

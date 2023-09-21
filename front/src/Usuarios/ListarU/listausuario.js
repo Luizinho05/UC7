@@ -46,7 +46,7 @@ export default function ListarUsuarios(){
                          <h3>{usuario.nome}</h3>
                          <h3>{usuario.email}</h3>
                         <h3 className='icones'>
-                         <Link to ={`/AlterarU/${usuario.id}`}><FaPencilAlt size='1.4rem' color='green'/></Link>
+                         <Link to ={`/AlterarU/${usuario.id}`}><FaPencilAlt size='1.4rem' color='rgb(238, 171, 47)'/></Link>
                         </h3>
                         <h3 className='icones'>
                          <FaTrashAlt size='1.4rem' color='red' onClick={() => excluirUsuario(usuario.id)}/>

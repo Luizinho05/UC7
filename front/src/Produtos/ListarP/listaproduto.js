@@ -43,7 +43,7 @@ export default function ListarProdutos(){
                          <h3>{produto.quantidade}</h3>
                          <h3>{produto.preco}</h3>
                             <h3 className='Icons'>
-                                <Link to={`/AlterarP/${produto.id}`}><FaPencilAlt size='1.4rem' color='green'/></Link>
+                                <Link to={`/AlterarP/${produto.id}`}><FaPencilAlt size='1.4rem' color='rgb(238, 171, 47)'/></Link>
                             </h3>
                             <h3 className='Icons'>
                                 <FaTrashAlt size='1.4rem' color='red'

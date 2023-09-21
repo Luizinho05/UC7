@@ -7,19 +7,24 @@ import './clientes.css'
 export default function ClienteCadastro() {
 
 const navigation = useNavigate()
-const [nome, setNome] = useState ([''])
-const [cpf_cnpj, setCpfCnpj] = useState ([''])
-const [rg_ie, setRgIe] = useState ([''])
-const [celular, setCelular] = useState ([''])
-const [celularFixo, setCelfixo] = useState ([''])
-const [rua, setRua] = useState ([''])
-const [complemento, setComplemento] = useState ([''])
-const [bairro, setBairro] = useState ([''])
-const [cidade, setCidade] = useState ([''])
-const [estado, setEstado] = useState ([''])
-const [pais, setPais ] = useState ([''])
+const [nome, setNome] = useState ('')
+const [cpf_cnpj, setCpfCnpj] = useState ('')
+const [rg_ie, setRgIe] = useState ('')
+const [celular, setCelular] = useState ('')
+const [celularFixo, setCelfixo] = useState ('')
+const [rua, setRua] = useState ('')
+const [complemento, setComplemento] = useState ('')
+const [bairro, setBairro] = useState ('')
+const [cidade, setCidade] = useState ('')
+const [estado, setEstado] = useState ('')
+const [pais, setPais ] = useState ('')
 
-function handleCadastrar(){
+function handleCadastrar(e){
+    e.preventDefault()
+     if(!nome || !cpf_cnpj || !rg_ie || !celular || !celularFixo || !rua || !complemento || !bairro || !cidade || !estado || !pais){
+     toast.warn('Existem campos em branco!')
+      return
+    }
     api.post("/CriarClientes", {
     nome,
     cpf_cnpj,
@@ -33,7 +38,7 @@ function handleCadastrar(){
     estado,
     pais
     })
-    toast.info('Cliente cadastrado com sucesso!')
+    toast.success('Cliente cadastrado com sucesso!')
     navigation('/listacliente')
 }
 

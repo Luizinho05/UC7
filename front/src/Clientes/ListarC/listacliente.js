@@ -42,7 +42,7 @@ export default function ListarClientes(){
                          <h3>{cliente.cpf_cnpj}</h3>
                          <h3>{cliente.pais}</h3>
                             <h3 className='icons'>
-                                <Link to={`/AlterarC/${cliente.id}`}><FaPencilAlt size='1.4rem' color='green'/></Link>
+                                <Link to={`/AlterarC/${cliente.id}`}><FaPencilAlt size='1.4rem' color='rgb(238, 171, 47)'/></Link>
                             </h3>
                             <h3 className='icons'>
                                 <FaTrashAlt size='1.4rem' color='red'
