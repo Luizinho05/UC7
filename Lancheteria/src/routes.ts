@@ -1,4 +1,6 @@
 import { Router } from 'express'
+import multer from 'multer'
+import uploadConfig from './config/multer'
 
 //Criar
 import { CriarUsuarioController } from './controllers/Usuarios/CriarUsuarioController'
@@ -29,6 +31,7 @@ import { AlterarProdutoController } from './controllers/Produtos/AlterarProdutoC
 import { AuthLoginController } from './controllers/Usuarios/AuthLoginController'
 
 const router = Router()
+const upload = multer(uploadConfig.upload('./tmp'))//dizendo qual é a pasta
 
 //Usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle)
@@ -46,7 +49,7 @@ router.put('/AlterarCliente', new AlterarClienteController().handle)
 router.delete('/ApagarClientes', new ApagarClientesController().handle)
 
 //Produtos
-router.post('/CriarProdutos', new CriarProdutosController().handle)
+router.post('/CriarProdutos', upload.single('file'), new CriarProdutosController().handle)
 router.get('/ListarProdutos', new ListarProdutosController().handle)
 router.get('/ListarProdutoUnico/:id', new ListarProdutoUnicoController().handle)
 router.put('/AlterarProduto', new AlterarProdutoController().handle)

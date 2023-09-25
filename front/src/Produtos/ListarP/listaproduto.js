@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import { FaTrashAlt, FaPencilAlt } from 'react-icons/fa'
-import api from '../../services/api'
 import {toast} from 'react-toastify'
 import { Link } from 'react-router-dom'
+import api from '../../services/api'
 import '../../css/listaproduto.css'
 
 

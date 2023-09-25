@@ -4,6 +4,7 @@ interface CriarProdutos{
    nome:       string
    fabricante: string
    quantidade: string
+   banner:     string
    preco:      string 
 }
 
@@ -12,26 +13,23 @@ class CriarProdutosServices{
     nome,
     fabricante,
     quantidade,
+    banner,
     preco
     }: CriarProdutos){
      if (!nome || !fabricante || !quantidade || !preco){
         throw new Error('Campos em Branco não são permitidos')
      }
    
-    const produto = await prismaClient.produtos.create({
+     await prismaClient.produtos.create({
         data: {
             nome: nome,
             fabricante: fabricante,
             quantidade: quantidade,
+            banner: banner,
             preco: preco
-        },
-        select: {
-            nome: true,
-            quantidade: true,
-            preco: true
         }
     })
-       return {dados: produto}
+       return {dados: 'Produto cadastrado com sucesso!'}
     }
 }
 
