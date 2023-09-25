@@ -14,7 +14,7 @@ const [password, setPassword] = useState ([''])
 async function AuntenticarUsuario(e){
     e.preventDefault()
     if(!email || !password){
-        toast.warn('Existem campos em branco')
+        toast.warn('Existem campos em branco!')
         return
     }
     try{

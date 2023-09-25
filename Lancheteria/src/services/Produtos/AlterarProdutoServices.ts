@@ -17,7 +17,7 @@ class AlterarProdutoServices{
                 preco: alteraPreco
             }
         }) 
-        return {dados: 'O Dado foi alterado com sucesso!'}
+        return {dados: 'Dados Alterados com sucesso!'}
     }
 }
 

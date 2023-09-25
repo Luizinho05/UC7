@@ -18,7 +18,7 @@ class AlterarUsuarioServices{
                 email: alteraEmail
             }
         })
-        return {dados: 'Dados Alterados com êxito'}
+        return {dados: 'Dados Alterados com sucesso!'}
     }
 }
 
