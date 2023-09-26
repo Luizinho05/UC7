@@ -9,7 +9,7 @@ class CriarProdutosController{
         const { nome, fabricante, quantidade, preco } = req.body
 
         if (!req.file){
-            throw new Error('Imagem com problema')
+            throw new Error('Imagem com problemas!')
         } else {
 
         const { originalname, filename: banner } = req.file 

@@ -16,7 +16,7 @@ class CriarProdutosServices{
     banner,
     preco
     }: CriarProdutos){
-     if (!nome || !fabricante || !quantidade || !preco){
+     if (!nome || !fabricante || !quantidade || !banner || !preco){
         throw new Error('Campos em Branco não são permitidos')
      }
    
