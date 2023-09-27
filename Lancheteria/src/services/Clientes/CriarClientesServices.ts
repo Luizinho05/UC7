@@ -44,7 +44,7 @@ class CriarClientesServices{
             })
 
             if (DocJaCadastrado){
-                throw new Error('CPF/CNPJ ou RG/IE já cadastrado')
+                throw new Error('CPF/CNPJ ou RG/IE já cadastrado!')
             }
 
              await prismaClient.clientes.create({

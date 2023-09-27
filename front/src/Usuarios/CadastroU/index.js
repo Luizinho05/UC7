@@ -6,57 +6,61 @@ import './usuario.css'
 
 export default function CadastroU() {
 
-const navigation = useNavigate()
-const [nome, setNome] = useState ('')
-const [email, setEmail] = useState ('')
-const [senha, setSenha] = useState ('')
+  const navigation = useNavigate()
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
 
 
-async function handleCadastrar(e){
-  e.preventDefault()
-  if(!nome || !email || !senha){
-    toast.warn('Existem campos em branco!')
-    return
+  async function handleCadastrar(e) {
+    e.preventDefault()
+    try {
+      if (!nome || !email || !senha) {
+        toast.warn('Existem campos em branco!')
+        return
+      }
+      await api.post("/CriarUsuarios", {
+        nome,
+        email,
+        senha
+      })
+      toast.success('Usuário cadastrado com sucesso!')
+      navigation('/listausuario')
+    } catch (err) {
+      toast.error(err.response.data.error)
+    }
   }
-  api.post("/CriarUsuarios", {
-    nome,
-    email,
-    senha
-   })
-   toast.success('Usuário cadastrado com sucesso!')
-   navigation('/listausuario')
-}
 
-        return (
-            <div id='formulariocadastroUsuario'>
-                <strong className="temasiniciaiscadastroUsuario">Cadastro do Usuário</strong>
+  return (
+    <div id='formulariocadastroUsuario'>
+      <strong className="temasiniciaiscadastroUsuario">Cadastro do Usuário</strong>
 
-                <form onSubmit={handleCadastrar}><br/>
+      <form onSubmit={handleCadastrar}><br />
 
-                    <div>
-                    <input placeholder='Nome' id='espaçoC'
-                   type='text'
-                   value={nome}
-                   onChange={(e) => setNome(e.target.value)}
-                   /></div>
-                   <div>
-                    <input placeholder='E-mail' id='espaçoC'
-                    type='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    /></div>
-                    <div>
-                    <input placeholder='Digite a Senha' id='espaçoC'
-                    type='password'
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
-                    /></div>
-                    <br/><br/>
+        <div>
+          <input placeholder='Nome' id='espaçoC'
+            type='text'
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          /></div>
+        <div>
+          <input placeholder='E-mail' id='espaçoC'
+            type='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          /></div>
+        <div>
+          <input placeholder='Digite a Senha' id='espaçoC'
+            type='password'
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          /></div>
+        <br /><br />
 
-                    <button type='submit' className='botaodecadastroUsuario'><strong className="cadastrarUsuario">Cadastrar</strong></button>
+        <button type='submit' className='botaodecadastroUsuario'><strong className="cadastrarUsuario">Cadastrar</strong></button>
 
-                </form>
-        </div>
-        )
-    
+      </form>
+    </div>
+  )
+
 }

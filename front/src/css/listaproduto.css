@@ -1,25 +1,54 @@
-.TitlePagina {
-    color: black;
-    text-align: center;
-    margin: 20px;
-    border: none;
-    font-size: 35px;
+.conteinerListarProduto {
+    display: flex;
+    flex-direction: column;
   }
+
+.h1{
+        display: flex;
+        justify-content: center;
+}
 
   .Dados{
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-between;
-    margin-right:39rem;
-    margin-left: 39rem;
+    flex-direction: column;
+    margin: 2rem;
+    border: 2px solid #000000;
+    width: 95%;
+
   }
 
-  .linhaDivisora{
-    font-size: 24px;
+.tabela{
+  background-color: rgb(199, 14, 14);
+  border: 2px solid #000000;
+}
+
+.thread{
+  border: 2px solid #000000;
+}
+
+  .valoresDefinidos{
+    background-color: rgb(223, 123, 42);
+    border: 2px solid #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .textoTabela{
+                background-color: rgb(238, 171, 47);
+                font-size: 1.10rem;
+                font-weight:bold;
+                border: 2px solid #000000;
+                padding: 0.5rem;
   }
 
   .Icons{
-    margin: 1px;
     cursor: pointer;
+    text-align: center;
+  }
+
+  .image{
+    width: 3.75rem;
   }

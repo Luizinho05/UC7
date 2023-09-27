@@ -18,7 +18,7 @@ class CriarUsuarioServices{
             }
         })
         if (emailJaCadastrado){
-            throw new Error('Esse Email já está Cadastrado')
+            throw new Error('Esse Email já está Cadastrado!')
         }
 
         const senhaCrypt = await hash(senha, 8)
