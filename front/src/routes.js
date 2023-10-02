@@ -14,6 +14,8 @@ import AlterarUsuario from './Usuarios/AlterarU'
 import AlterarCliente from './Clientes/AlterarC'
 import AlterarProduto from './Produtos/AlterarP'
 import Dashboard from './dashboard/dashboard'
+import ListarCategorias from './Categoria/Listar/listacategoria'
+import CadastrarCategoria from './Categoria/Criar/CriarCategoria'
 
 export default function Rotas(){
     return(
@@ -32,6 +34,8 @@ export default function Rotas(){
             <Route path='/AlterarC/:id' element={ <AlterarCliente /> } />
             <Route path='/AlterarP/:id' element={ <AlterarProduto /> } />
             <Route path='/dashboard' element={ <Dashboard /> } />
+            <Route path='/listacategoria' element={ <ListarCategorias /> } />
+            <Route path='/CriarCategoria' element={ <CadastrarCategoria /> } />
         </Routes>
         <Footer />
         </BrowserRouter>

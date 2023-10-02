@@ -63,5 +63,19 @@ model Produtos{
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
+  categorias Categorias @relation(fields: [categoriaId], references: [id])//categorias id vai se referir ao ID do modelo
+  categoriaId String
+
   @@map("produtos")// NOME QUE DA ACESSO A TABELA PRODUTOS NO DB
+}
+
+model Categorias{
+  id        String @id @default(uuid())
+  nome      String 
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  produtos Produtos[]
+
+  @@map("categorias")
 }

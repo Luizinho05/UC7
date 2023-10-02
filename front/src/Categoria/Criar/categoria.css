@@ -1,0 +1,52 @@
+#formulariocadastroCategoria{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin: 20px;
+  }
+  
+  .temainicialCategoria{
+    color:black;
+    font-size:35px;
+  }  
+  
+  ::placeholder{
+    color: #DAA520;
+    width: 100%;
+    right: 100%;
+    text-decoration: none;
+    font-size: 15px;
+   text-align: center;
+  }   
+  
+  #espaçoCategoria{
+    padding: 8px 8px 8px 8px;
+    margin: 2px;
+    font-size: 13px;
+    font-style:oblique;
+    background-color: black;
+    color: white;
+    width: 150px;
+    right:150px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px 20px 20px 20px;
+    text-decoration: none;
+  }
+  
+  
+  .cadastrarCategoria{
+    color:#DAA520;
+    padding:15px;
+    cursor: pointer;
+  }  
+  
+  .botaocadastrar{
+    background-color: black;
+    border-style:outset;
+    border-radius: 100px 100px 100px 100px;
+    bottom:100px;
+    border-color: #DAA520;
+    font-size:16px;
+  }

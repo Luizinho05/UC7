@@ -1,0 +1,20 @@
+.PaginaTitulo {
+    color: black;
+    text-align: center;
+    margin: 20px;
+    font-size: 35px;
+    border: none;
+  }
+
+  .DadosCategoria{
+    display:flex;
+    flex-direction:row;
+    text-align: center;
+    justify-content: space-between;
+    margin-right:39rem;
+    margin-left: 39rem;
+  }
+
+  .linhaDivisora{
+    font-size: 24px;
+  }

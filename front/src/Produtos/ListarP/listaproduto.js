@@ -43,6 +43,7 @@ export default function ListarProdutos() {
                             <th className='valoresDefinidos'>Preço</th>
                             <th className='valoresDefinidos'>Criado</th>
                             <th className='valoresDefinidos'>Alterado</th>
+                            <th className='valoresDefinidos'>Categoria ID</th>
                             <th className='valoresDefinidos'>Editar</th>
                             <th className='valoresDefinidos'>Apagar</th>
                         </tr>
@@ -59,6 +60,7 @@ export default function ListarProdutos() {
                                   <td className='textoTabela'>{produto.preco}</td>
                                   <td className='textoTabela'>{produto.create_at}</td>
                                   <td className='textoTabela'>{produto.update_at}</td>
+                                  <td className='textoTabela'>{produto.categoriaId}</td>
                                   <td className='Icons textoTabela'><Link to={`/AlterarP/${produto.id}`}><FaPencilAlt size='1.4rem' color='blue'/></Link></td>
                                   <td className='Icons textoTabela'><FaTrashAlt size='1.4rem' color='red' onClick={() => excluirProduto(produto.id)}/></td>
                                 </tr>

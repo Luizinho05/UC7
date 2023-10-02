@@ -6,11 +6,13 @@ import uploadConfig from './config/multer'
 import { CriarUsuarioController } from './controllers/Usuarios/CriarUsuarioController'
 import { CriarClientesController } from './controllers/Clientes/CriarClientesController'
 import { CriarProdutosController } from './controllers/Produtos/CriarProdutosController'
+import { CriarCategoriaController } from './controllers/Categorias/CriarCategoriasController'
 
 //Listar
 import { ListarClientesController } from './controllers/Clientes/ListaClienteController'
 import { ListarProdutosController } from './controllers/Produtos/ListarProdutoController'
 import { ListarUsuariosController } from './controllers/Usuarios/ListarUsuarioController'
+import { ListarCategoriasController } from './controllers/Categorias/ListarCategoriasController'
 
 //Listar único
 import { ListarUsuarioUnicoController } from './controllers/Usuarios/ListarUsuarioUnicoController'
@@ -54,5 +56,9 @@ router.get('/ListarProdutos', new ListarProdutosController().handle)
 router.get('/ListarProdutoUnico/:id', new ListarProdutoUnicoController().handle)
 router.put('/AlterarProduto', new AlterarProdutoController().handle)
 router.delete('/ApagarProdutos', new ApagarProdutosController().handle)
+
+//Categorias
+router.post('/CriarCategorias', new CriarCategoriaController().handle)
+router.get('/ListarCategorias', new ListarCategoriasController().handle)
 
 export{router}

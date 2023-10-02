@@ -1,11 +1,12 @@
 import prismaClient from '../../prisma'
 
 interface CriarProdutos{
-   nome:       string
-   fabricante: string
-   quantidade: string
-   banner:     string
-   preco:      string 
+   nome:        string
+   fabricante:  string
+   quantidade:  string
+   banner:      string
+   preco:       string 
+   categoriaId: string
 }
 
 class CriarProdutosServices{
@@ -14,9 +15,10 @@ class CriarProdutosServices{
     fabricante,
     quantidade,
     banner,
-    preco
+    preco,
+    categoriaId
     }: CriarProdutos){
-     if (!nome || !fabricante || !quantidade || !banner || !preco){
+     if (!nome || !fabricante || !quantidade || !banner || !preco || !categoriaId){
         throw new Error('Campos em Branco não são permitidos')
      }
    
@@ -26,7 +28,8 @@ class CriarProdutosServices{
             fabricante: fabricante,
             quantidade: quantidade,
             banner: banner,
-            preco: preco
+            preco: preco,
+            categoriaId: categoriaId
         }
     })
        return {dados: 'Produto cadastrado com sucesso!'}
