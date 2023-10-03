@@ -32,33 +32,34 @@ import { AlterarProdutoController } from './controllers/Produtos/AlterarProdutoC
 //Autenticar
 import { AuthLoginController } from './controllers/Usuarios/AuthLoginController'
 
+import { isAutenticado } from './middleware/isAutenticado'
 const router = Router()
 const upload = multer(uploadConfig.upload('./tmp'))//dizendo qual é a pasta
 
 //Usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle)
 router.post('/AutenticarUsuario', new AuthLoginController().handle)
-router.get('/ListarUsuarios', new ListarUsuariosController().handle)
-router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUnicoController().handle)
-router.put('/AlterarUsuario', new AlterarUsuarioController().handle)
-router.delete('/ApagarUsuarios', new ApagarUsuariosController().handle)
+router.get('/ListarUsuarios', isAutenticado, new ListarUsuariosController().handle)
+router.get('/ListarUsuarioUnico/:id', isAutenticado, new ListarUsuarioUnicoController().handle)
+router.put('/AlterarUsuario', isAutenticado, new AlterarUsuarioController().handle)
+router.delete('/ApagarUsuarios', isAutenticado, new ApagarUsuariosController().handle)
 
 //Clientes
-router.post('/CriarClientes', new CriarClientesController().handle)
-router.get('/ListarClientes', new ListarClientesController().handle)
-router.get('/ListarClienteUnico/:id', new ListarClienteUnicoController().handle)
-router.put('/AlterarCliente', new AlterarClienteController().handle)
-router.delete('/ApagarClientes', new ApagarClientesController().handle)
+router.post('/CriarClientes', isAutenticado, new CriarClientesController().handle)
+router.get('/ListarClientes', isAutenticado, new ListarClientesController().handle)
+router.get('/ListarClienteUnico/:id', isAutenticado, new ListarClienteUnicoController().handle)
+router.put('/AlterarCliente', isAutenticado, new AlterarClienteController().handle)
+router.delete('/ApagarClientes', isAutenticado, new ApagarClientesController().handle)
 
 //Produtos
-router.post('/CriarProdutos', upload.single('file'), new CriarProdutosController().handle)
-router.get('/ListarProdutos', new ListarProdutosController().handle)
-router.get('/ListarProdutoUnico/:id', new ListarProdutoUnicoController().handle)
-router.put('/AlterarProduto', new AlterarProdutoController().handle)
-router.delete('/ApagarProdutos', new ApagarProdutosController().handle)
+router.post('/CriarProdutos', isAutenticado, upload.single('file'), new CriarProdutosController().handle)
+router.get('/ListarProdutos', isAutenticado, new ListarProdutosController().handle)
+router.get('/ListarProdutoUnico/:id', isAutenticado, new ListarProdutoUnicoController().handle)
+router.put('/AlterarProduto', isAutenticado, new AlterarProdutoController().handle)
+router.delete('/ApagarProdutos', isAutenticado, new ApagarProdutosController().handle)
 
 //Categorias
-router.post('/CriarCategorias', new CriarCategoriaController().handle)
-router.get('/ListarCategorias', new ListarCategoriasController().handle)
+router.post('/CriarCategorias', isAutenticado, new CriarCategoriaController().handle)
+router.get('/ListarCategorias', isAutenticado, new ListarCategoriasController().handle)
 
-export{router}
+export { router }
