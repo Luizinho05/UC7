@@ -4,28 +4,28 @@ import { CriarProdutosServices } from '../../services/Produtos/CriarProdutosServ
 //req é solicitação
 //res é resposta
 
-class CriarProdutosController{
-    async handle (req: Request, res: Response){
-        const { nome, fabricante, quantidade, preco , categoriaId } = req.body
+class CriarProdutosController {
+    async handle(req: Request, res: Response) {
+        const { nome, fabricante, quantidade, preco, categoriaId } = req.body
 
-        if (!req.file){
+        if (!req.file) {
             throw new Error('Imagem com problemas!')
         } else {
 
-        const { originalname, filename: banner } = req.file 
-        const criarProdutosServices = new CriarProdutosServices()
-        const produtos = await criarProdutosServices.execute({
-           nome,
-           fabricante,
-           quantidade,
-           banner,	
-           preco,
-           categoriaId
-        })
-        return res.json(produtos)
+            const { originalname, filename: banner } = req.file
+            const criarProdutosServices = new CriarProdutosServices()
+            const produtos = await criarProdutosServices.execute({
+                nome,
+                fabricante,
+                quantidade,
+                banner,
+                preco,
+                categoriaId
+            })
+            return res.json(produtos)
 
         }
     }
 }
 
-export {CriarProdutosController}
+export { CriarProdutosController }
