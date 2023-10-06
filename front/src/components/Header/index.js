@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { LuUserCircle2 } from 'react-icons/lu'
 import './header7.css'
 import '../../estilo.index.css'
 
@@ -8,36 +9,10 @@ export default function Header() {
         <div id="fundo">
             
             <div class='dropdown'>
-                <button class='dropbtn'><Link className="mostarda" to='/CadastroU'>Cadastro Usuário</Link></button>
+                <button class='dropbtn'><Link className="mostarda" to='/LoginU'><LuUserCircle2 size='1.60rem' color='blue'/></Link></button>
             </div>
 
-            <div class="dropdown">
-                <button class="dropbtn"><Link className="ketchup" to='/CadastroC'>Cadastro Cliente</Link></button>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn"><Link className="mostarda" to='/CadastroP'>Cadastro Produto</Link></button>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn"><Link className="ketchup" to='/CriarCategoria'>Cadastro Categoria</Link></button>
-            </div>
-
-            <div class='dropdown'>
-                <button class='dropbtn'><Link className='mostarda' to='/listausuario'>Listar Usuário</Link></button>
-            </div>
-
-            <div class='dropdown'>
-               <button class='dropbtn'><Link className='ketchup' to='/listacliente'>Listar Cliente</Link></button>
-            </div>
-
-            <div class='dropdown'>
-                <button class='dropbtn'><Link className='mostarda' to='/listaproduto'>Listar Produto</Link></button>
-            </div>
-
-            <div class='dropdown'>
-                <button class='dropbtn'><Link className='ketchup' to='/listacategoria'>Listar Categoria</Link></button>
-            </div>
+        
 
         </div>
     )

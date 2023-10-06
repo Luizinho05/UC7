@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import api from '../../services/api'
 import './login.css'
 
@@ -51,6 +51,8 @@ async function AuntenticarUsuario(e){
               
 
        <button type='submit' className='botaologinU'><strong className='loginU'>logar</strong></button>
+       
+       <p className='linkDireita'><Link to='/CadastroU'>Você já está Cadastrado como usuário?</Link></p>
         </form>
      </div>
     )

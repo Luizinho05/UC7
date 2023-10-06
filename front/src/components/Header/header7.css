@@ -9,7 +9,7 @@
     text-align: right;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-between;
     border-radius: 100px;
     border-style: outset;
     border-color: rgb(199, 14, 14);
@@ -46,7 +46,6 @@
   }
 
   .mostarda{
-      color: rgb(207, 207, 24);
       text-align: right;
       display: inline-block;
       position: relative;
