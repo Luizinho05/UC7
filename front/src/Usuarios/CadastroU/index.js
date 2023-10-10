@@ -25,7 +25,7 @@ export default function CadastroU() {
         senha
       })
       toast.success('Usuário cadastrado com sucesso!')
-      navigation('/listausuario')
+      navigation('/LoginU')
     } catch (err) {
       toast.error(err.response.data.error)
     }
