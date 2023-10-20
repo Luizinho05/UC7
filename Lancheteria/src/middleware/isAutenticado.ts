@@ -24,7 +24,7 @@ export function isAutenticado(
              token,
              process.env.JWT_SEGREDO
         ) as PayLoad
-        console.log(sub)
+         return next()
        
 
      } catch(err){
