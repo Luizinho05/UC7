@@ -53,10 +53,10 @@ router.delete('/ApagarClientes', isAutenticado, new ApagarClientesController().h
 
 //Produtos
 router.post('/CriarProdutos', isAutenticado, upload.single('file'), new CriarProdutosController().handle)
-router.get('/ListarProdutos', isAutenticado, new ListarProdutosController().handle)
-router.get('/ListarProdutoUnico/:id', isAutenticado, new ListarProdutoUnicoController().handle)
-router.put('/AlterarProduto', isAutenticado, new AlterarProdutoController().handle)
-router.delete('/ApagarProdutos', isAutenticado, new ApagarProdutosController().handle)
+router.get('/ListarProdutos',  new ListarProdutosController().handle)
+router.get('/ListarProdutoUnico/:id', new ListarProdutoUnicoController().handle)
+router.put('/AlterarProduto', new AlterarProdutoController().handle)
+router.delete('/ApagarProdutos', new ApagarProdutosController().handle)
 
 //Categorias
 router.post('/CriarCategorias', isAutenticado, new CriarCategoriaController().handle)
